@@ -10,49 +10,49 @@
 
 		public function depositar(float $valor){
 			$this->saldo += $valor;
-			echo "Depositado " . $valor;
-	}
+			echo "Deposito: " . $valor;
+		}
 
 		public function sacar(float $valor){
-			if($valor <= $this->saldo){
-			$this->saldo -= $valor;
-			echo "Saque sucedido";
+			if($valor < $this->saldo){
+				$this->saldo -= $valor;
+			echo "Voce fez um saque de " . $valor;
 		} else {
-			echo "saque deu errado, pois seu saque é maior doque tem na sua conta";
+			echo "Vc nao pode fazer o saque";
+			}
 		}
-	}
 		public function getSaldo(){
 			return $this->saldo;
 		}
+
 		public function getTitular(){
-    		return $this->titular;
-}
+			return $this->titular;
 		}
+	}
 
+$conta1 = new contaBancaria("Gabriel", 500);
+$conta1->getSaldo();
+$conta1->getTitular();
 
-$minhaConta = new contaBancaria("Gabriel", 500);
-$minhaConta->getSaldo();
-$minhaConta->getTitular();
-echo "Titular: " . $minhaConta->getTitular();
+echo "Titular: " . $conta1->getTitular();
 echo "\n";
-echo "Saldo atual: " . $minhaConta->getSaldo();
+echo "Saldo: " . $conta1->getSaldo();
 
-echo "\n";
-echo "---------------------\n";
-
-$minhaConta->depositar(300);
-echo "\n";
-echo "Conta: " . $minhaConta->getSaldo();
+echo "\n--------------------------";
 
 echo "\n";
 
-echo "---------------------\n";
-
-$minhaConta->sacar(500);
+$conta1->depositar(300);
 echo "\n";
-echo "Saldo atual: " . $minhaConta->getSaldo();
+echo "Saldo: " . $conta1->getSaldo();
+
+echo "\n--------------------------";
 
 echo "\n";
-echo "---------------------\n";
 
+$conta1->sacar(500);
+echo "\n";
+echo "Saldo: " . $conta1->getSaldo();
+
+echo "\n--------------------------";
 ?>
