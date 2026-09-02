@@ -34,10 +34,16 @@
 		}
 }
 
+	public function getNotas(): array{
+		return $this->notas;
+	}
+
 	public function getNome(): string {
 		return $this->nome;
 	}
 }
+
+
 
 $aluno1 = new Aluno("Gabriel");
 $aluno1->getNome();
@@ -47,7 +53,13 @@ $aluno1->adicionarNota(6.7);
 $aluno1->calcularMedia();
 $aluno1->isAprovado();
 
+
 echo "Aluno: " . $aluno1->getNome();
+echo "\n";
+echo "Notas: ";
+foreach ($aluno1->getNotas() as $nota){
+	echo $nota . " ";
+}
 echo "\n";
 echo "Media: " . number_format($aluno1->calcularMedia(), 1);
 echo "\n";
