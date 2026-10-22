@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #ff4b00;
+            color: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        /* Banner com imagem grande */
+        .banner {
+            height: 400px;
+            background-image: url("https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 40px 7%;
+            color: white;
+        }
+
+        /* Texto por cima da imagem */
+        .banner-conteudo {
+            max-width: 450px;
+            background-color: rgba(0, 0, 0, 0.45);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .banner h2 {
+            font-size: 32px;
+        }
+
+        .banner p {
+            line-height: 1.6;
+        }
+
+        .botao {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            border: 1px solid white;
+            padding: 12px 20px;
+            border-radius: 6px;
+        }
+
+        /* Ajuste para celulares */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+
+            .banner {
+                height: 350px;
+                padding: 20px;
+            }
+
+            .banner h2 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>IKau</h1>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner" id="inicio">
+            <div class="banner-conteudo">
+                <h2>Inovação para o seu futuro</h2>
+
+                <p>
+                    Conheça nossas soluções e descubra
+                    novas oportunidades para você.
+                </p>
+
+                <a href="#sobre" class="botao">Saiba mais</a>
+            </div>
+        </section>
+
+        <section id="sobre" style="padding: 30px;">
+            <h2>Sobre nossa empresa</h2>
+            <p>Trabalhamos para oferecer qualidade e inovação.</p>
+        </section>
+    </main>
+
+</body>
+</html>
