@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Alternador de Tema - OneCompiler</title>
+    <style>
+        
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;             padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="texto">Texto original (Tema Claro)</p>
+    <button id="meuBotao">Alternar Tema</button>
+
+    <script>
+        
+        const botao = document.getElementById('meuBotao');
+        const paragrafo = document.getElementById('texto');
+
+        
+        botao.addEventListener('click', function() {
+            
+                        if (document.body.style.backgroundColor === 'black') {
+                
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+                paragrafo.textContent = 'Texto original (Tema Claro)';
+            } else {
+                
+                document.body.style.backgroundColor = 'black';
+                document.body.style.color = 'white';
+                paragrafo.textContent = 'O texto foi alterado com sucesso! (Tema Escuro)';
+            }
+            
+        });
+    </script>
+
+</body>
+</html>
